@@ -76,9 +76,10 @@ const App = () => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_SERVER_API_URL}users`,
-        formData
-      );
+  "https://form-check-out.onrender.com/users",
+  formData
+);
+
 
       if (res.data.success) {
         toast.success("Form submitted successfully!");
