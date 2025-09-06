@@ -7,7 +7,16 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: process.env.CLIENT_URL }));
+app.use(cors({
+  origin: (origin, callback) => {
+    const allowed = ['https://checkout-form-demo.vercel.app', 'http://localhost:5173'];
+    if (!origin || allowed.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,

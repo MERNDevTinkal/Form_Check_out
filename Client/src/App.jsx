@@ -76,7 +76,7 @@ const App = () => {
 
     try {
       const res = await axios.post(
-        `${import.meta.env.VITE_SERVER_API_URL}/users`,
+        `${import.meta.env.VITE_SERVER_API_URL}users`,
         formData
       );
 
