@@ -7,7 +7,7 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors({ origin: "http://localhost:5173" })); 
+app.use(cors({ origin: process.env.CLIENT_URL }));
 
 const pool = mysql.createPool({
   host: process.env.DB_HOST,
