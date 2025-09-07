@@ -75,10 +75,10 @@ const App = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post(
-  "https://form-check-out.onrender.com/users",
-  formData
-);
+     const res = await axios.post(
+    `${import.meta.env.VITE_SERVER_API_URL}/users`,
+    formData
+  );
 
 
       if (res.data.success) {

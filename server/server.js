@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://checkout-form-demo.vercel.app", 
+    origin: process.env.CLIENT_URL, 
   })
 );
 const pool = mysql.createPool({
